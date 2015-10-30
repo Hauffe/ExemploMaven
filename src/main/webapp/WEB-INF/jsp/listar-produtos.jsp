@@ -4,6 +4,7 @@
     Author     : alexandre.hauffe
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,10 +13,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Produto</h1>
-        <p>${produto.id}</p>
-        <p>${produto.nome}</p>
-        <p>${produto.quantidade}</p>
-        <p>${produto.precoUnitario}</p>
+        
+        <c:forEach items="produto" var="produtos" >
+            <h1>Produto</h1>
+                <p>${produto.id}</p>
+                <p>${produto.nome}</p>
+                <p>${produto.quantidade}</p>
+                <p>${produto.precoUnitario}</p>
+        </c:forEach>
     </body>
 </html>

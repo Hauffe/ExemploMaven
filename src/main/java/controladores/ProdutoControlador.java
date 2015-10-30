@@ -5,6 +5,8 @@
  */
 package controladores;
 
+import java.util.ArrayList;
+import java.util.List;
 import modelos.Produto;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,12 +23,27 @@ public class ProdutoControlador {
     public ModelAndView obterProduto(){
         ModelAndView mav;
         mav = new ModelAndView("listar-produtos");
-        Produto p = new Produto();
-        p.setId(1L);
-        p.setNome("Produto");
-        p.setPrecoUnitario(999.99f);
-        p.setQuantidade(1);
-        mav.addObject("produto", p);
+        
+        List<Produto> produtos = new ArrayList<Produto>();
+        
+        Produto p1 = new Produto();
+        p1.setId(1L);
+        p1.setNome("Produto1");
+        p1.setPrecoUnitario(999.99f);
+        p1.setQuantidade(1);
+        
+        Produto p2 = new Produto();
+        p2.setId(2L);
+        p2.setNome("Produto2");
+        p2.setPrecoUnitario(888.99f);
+        p2.setQuantidade(3);
+        
+        Produto p3 = new Produto();
+        p3.setId(3L);
+        p3.setNome("Produto3");
+        p3.setPrecoUnitario(777.99f);
+        p3.setQuantidade(2);
+        mav.addObject("produtos", produtos);
         
         return mav;
     }
